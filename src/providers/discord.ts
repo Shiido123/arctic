@@ -30,6 +30,7 @@ export class Discord implements OAuth2Provider {
 	}
 
 	public async validateAuthorizationCode(code: string): Promise<DiscordTokens> {
+		console.log(code)
 		const result = await this.client.validateAuthorizationCode<TokenResponseBody>(code, {
 			credentials: this.clientSecret
 		});
